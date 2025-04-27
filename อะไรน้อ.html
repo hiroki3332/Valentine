@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Will You Be My Valentine?</title>
+  <style>
+    body {
+      background: #ffccf5;
+      font-family: 'Arial', sans-serif;
+      text-align: center;
+      padding-top: 50px;
+    }
+    h1 {
+      color: #ff66b3;
+      font-size: 45px;
+      font-weight: bold;
+      text-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+    }
+    button {
+      margin: 20px;
+      padding: 20px 40px;
+      font-size: 18px;
+      background-color: #ff66b3;
+      color: white;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: 0.3s;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    button:hover {
+      background-color: #ff3385;
+      transform: scale(1.1);
+    }
+    #final-message {
+      display: none;
+      font-size: 24px;
+      color: #ff1a75;
+      margin-top: 50px;
+      font-weight: bold;
+      animation: popin 0.5s ease-out;
+    }
+    #no-message {
+      display: none;
+      font-size: 22px;
+      color: #ff66b3;
+      margin-top: 50px;
+    }
+    #yes-big {
+      font-size: 36px;
+      padding: 25px 50px;
+      background-color: #ff1a75;
+      border-radius: 15px;
+      transition: 0.3s;
+    }
+    #yes-big:hover {
+      background-color: #ff3385;
+    }
+    @keyframes popin {
+      0% { opacity: 0; transform: scale(0.8); }
+      100% { opacity: 1; transform: scale(1); }
+    }
+    img {
+      width: 200px; /* adjust size as needed */
+      height: auto;
+      margin-top: 30px;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+<body>
+
+<h1>พี่ต้น... I have a question...</h1>
+<img src="valentine.jpg" alt="Cute heart image" /> <!-- This is where your image goes -->
+<button onclick="nextPage()">Click to continue</button>
+
+<div id="secondPage" style="display:none;">
+  <h1>Will you be my Valentine for the rest of my life? </h1>
+  <button onclick="showFinal()">YES!</button>
+  <img src="image1.jpg" alt="Image 1 description" />
+  <button onclick="noResponse()">NO!</button>
+</div>
+
+<div id="final-message">
+   Thanks you so much i never had this moment before,i knew u gonnna say yes ei ei<br>  
+  ขอบคุณที่เลือกผมนะครับ รักที่สุดๆๆๆๆ จุ้บๆๆๆๆๆ. 
+</div>
+
+<div id="no-message">
+   Nah uh คนเก่งต้องห้ามกด No นะ <br> หยอกกกกก, will you be my Valentine? 💖<br>
+  <button id="yes-big" onclick="showFinal()">YES!</button>
+</div>
+
+<script>
+function nextPage() {
+  document.querySelector('h1').style.display = 'none';
+  document.querySelector('button').style.display = 'none';
+  document.getElementById('secondPage').style.display = 'block';
+}
+
+function showFinal() {
+  document.getElementById('secondPage').style.display = 'none';
+  document.getElementById('final-message').style.display = 'block';
+}
+
+function noResponse() {
+  document.getElementById('secondPage').style.display = 'none';
+  document.getElementById('no-message').style.display = 'block';
+}
+</script>
+
+</body>
+</html>
